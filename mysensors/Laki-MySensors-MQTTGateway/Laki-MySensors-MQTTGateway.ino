@@ -59,12 +59,17 @@
 
 
 // Enable debug prints to serial monitor
-#define MY_DEBUG
+//#define MY_DEBUG
 
 // Enables and select radio type (if attached)
 #define MY_RADIO_NRF24
 //#define MY_RADIO_RFM69
 //#define MY_RADIO_RFM95
+
+//define channel for radio
+#define MY_RF24_CHANNEL 10
+#define MY_RF24_DATARATE RF24_250KBPS 
+#define MY_RF24_PA_LEVEL RF24_PA_HIGH 
 
 #define MY_GATEWAY_MQTT_CLIENT
 
@@ -101,22 +106,21 @@
 #define MY_MQTT_PASSWORD "MySens.11"
 
 // Enable MY_IP_ADDRESS here if you want a static ip address (no DHCP)
-//#define MY_IP_ADDRESS 192,168,178,87
+//#define MY_IP_ADDRESS 192,168,0,202
 
 // Renewal period if using DHCP
-#define MY_IP_RENEWAL_INTERVAL 60000
+#define MY_IP_RENEWAL_INTERVAL 600000
 // The MAC address can be anything you want but should be unique on your network.
 // Newer boards have a MAC address printed on the underside of the PCB, which you can (optionally) use.
 // Note that most of the Arduino examples use  "DEAD BEEF FEED" for the MAC address.
-#define MY_MAC_ADDRESS 0x99, 0xDA, 0x8E, 0x4D, 0x22, 0xFF
-
+#define MY_MAC_ADDRESS 0x00, 0xAA, 0x8E, 0x4D, 0x22, 0x02
 // If using static ip you can define Gateway and Subnet address as well
-//#define MY_IP_GATEWAY_ADDRESS 192,168,178,1
+//#define MY_IP_GATEWAY_ADDRESS 192,168,0,1
 //#define MY_IP_SUBNET_ADDRESS 255,255,255,0
 
 // MQTT broker ip address or url. Define one or the other.
 //#define MY_CONTROLLER_URL_ADDRESS "m20.cloudmqtt.com"
-#define MY_CONTROLLER_IP_ADDRESS 192, 168, 0, 201
+#define MY_CONTROLLER_IP_ADDRESS 192, 168, 0, 200
 
 // The MQTT broker port to to open
 #define MY_PORT 1883
